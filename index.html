@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>69STORY Event Calendar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">69STORY</div>
+      <div class="subtitle">Event Calendar</div>
+    </div>
+    <a class="admin-link" href="admin.html">Admin</a>
+  </header>
+
+  <main class="wrap">
+    <section id="nextEvent" class="next-card">
+      <div class="muted">NEXT EVENT</div>
+      <h1>กำลังโหลด...</h1>
+    </section>
+
+    <section class="calendar-panel">
+      <div class="calendar-head">
+        <button id="prevMonth">‹</button>
+        <h2 id="monthTitle"></h2>
+        <button id="nextMonth">›</button>
+      </div>
+      <div class="weekdays">
+        <span>จ</span><span>อ</span><span>พ</span><span>พฤ</span><span>ศ</span><span>ส</span><span>อา</span>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="eventDialog" class="dialog">
+    <button class="dialog-close" onclick="eventDialog.close()">×</button>
+    <div id="eventDetail"></div>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>69STORY Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">69STORY</div>
+      <div class="subtitle">Admin Calendar</div>
+    </div>
+    <a class="admin-link" href="index.html">ดูหน้าเว็บ</a>
+  </header>
+
+  <main class="wrap admin-wrap">
+    <section id="loginBox" class="panel">
+      <h2>เข้าสู่ระบบแอดมิน</h2>
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn" class="gold-btn">Login</button>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section id="adminBox" class="admin-grid hidden">
+      <form id="eventForm" class="panel">
+        <h2 id="formTitle">เพิ่มงาน</h2>
+        <input type="hidden" id="eventId" />
+        <label>ชื่องาน</label>
+        <input id="title" required placeholder="เช่น ANALINE" />
+        <label>ศิลปิน</label>
+        <input id="artist" placeholder="เช่น ANALINE / BIGBEAR" />
+        <label>วันที่</label>
+        <input id="eventDate" type="date" required />
+        <label>เวลาเริ่ม</label>
+        <input id="startTime" type="time" />
+        <label>เวลาจบ</label>
+        <input id="endTime" type="time" />
+        <label>ประเภทงาน</label>
+        <select id="type">
+          <option value="Live Band">Live Band</option>
+          <option value="DJ">DJ</option>
+          <option value="Concert">Concert</option>
+          <option value="Private">Private</option>
+          <option value="Closed">ปิดร้าน</option>
+        </select>
+        <label>ลิงก์โปสเตอร์</label>
+        <input id="posterUrl" placeholder="วางลิงก์รูปภาพ" />
+        <label>รายละเอียด</label>
+        <textarea id="description" rows="4" placeholder="รายละเอียดงาน"></textarea>
+        <div class="row">
+          <button class="gold-btn" type="submit">บันทึก</button>
+          <button id="cancelEdit" class="dark-btn" type="button">ล้างฟอร์ม</button>
+        </div>
+      </form>
+
+      <section class="panel">
+        <div class="admin-headline">
+          <h2>รายการงาน</h2>
+          <button id="logoutBtn" class="dark-btn">Logout</button>
+        </div>
+        <div id="eventList" class="event-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
